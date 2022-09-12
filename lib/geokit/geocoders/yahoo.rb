@@ -113,7 +113,7 @@ class OauthUtil
 
   def percent_encode(string)
     # ref http://snippets.dzone.com/posts/show/1260
-    URI.escape(string, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]")).gsub('*', '%2A')
+    Addressable::URI.escape(string)
   end
 
   # @ref http://oauth.net/core/1.0/#rfc.section.9.2
